@@ -1,0 +1,24 @@
+/**
+ * 
+ * @mainpage
+ * 
+ * @brief Ten program pozwala miedzy innymi na zarządzanie dziennikiem uczniów wraz z ich ocenami
+ * \n \n 
+ * Funkcjonalność programu: \n 
+ * - wczytanie informacji o uczniach i ich ocenach w wcześniej zapisanych danych \n 
+ * - dodanie / usunięcie ucznia z listy \n
+ * - dodanie oceny dla wybranego ucznia \n
+ * - podanie ocenowej / procentowej średniej ocen \n
+ * - wypisanie wszystkich ocen dla wybranego ucznia \n 
+ * - zapisanie danych uzyskanych w trakcie działania do pliku \n 
+ * - podanie danych osobowych ucznia \n
+ * 
+ * \n \n  
+ * Komunikacja między programem a użytkownikiem odbywa się poprzez konsolę \n
+ * Do poprawnego działania programuj niezbędny jest folder /Uczniowie jeżeli taki folder nie istnieje zostanie stworzony w trakcie działania programu (w trakcie zapisz_dane()) \n 
+ * Uczniowie zapisani są w liście jednokierunkowej, ich dane jako atrybuty, a oceny w liście, która jest kolejnym atrybutem każdego ucznia
+ * @see main()
+ * @see zapisz_dane()
+ * @see uczen
+ * @see ocena
+ */

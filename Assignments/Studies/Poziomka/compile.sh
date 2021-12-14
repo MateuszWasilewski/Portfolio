@@ -1,0 +1,1 @@
+gcc @opcje @definicje poziomka.c -o main
