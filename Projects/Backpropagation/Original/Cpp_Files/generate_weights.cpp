@@ -2,6 +2,8 @@
 
 #include <bits/stdc++.h>
 
+using namespace std;
+
 double wg;
 int change,wynik;
 const int lim = 1e6;
@@ -13,10 +15,11 @@ const int ol = 10;
 int rozm[4] = { 784,100,25,16 };
 
 void gen(fstream &out);
+
 int main()
 {
 	fstream out;
-	out.open("../../../weights/weights.txt", ios::out);
+	out.open("weights/weights.txt", ios::out);
 	srand(time(0));
 	int poz = 0;
 	for (int i = 1; i < 4; i++) {

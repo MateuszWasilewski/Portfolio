@@ -2,8 +2,8 @@
 using namespace std;
 
 double tab[784];
-const pair <int, int> limit = { 60000,10000 };
-double rate = 0.5;
+const pair <int, int> limit = { 60000, 10000 };
+double rate = 10;
 double wynik=0;
 double expt[10];
 ifstream inimg, inlbl;
@@ -41,40 +41,36 @@ void build_weights();
 
 int main()
 {
-	/*while (wynik < 1) {
-		check_ac();
+	while (wynik < 1) {
 		//system("CLS");
 		cout << "Iteracja: " << iter << "\n";
 		cout << "Wynik: " << wynik << "\n";
 		iter++;
 		train();
+		check_ac();
 		rate /= 2;
 		//cout << "New Line\n";
 	}
-	*/
+	
 	check_ac();
 	cout << wynik << "\n";
-	system("pause");
+	//system("pause");
 	//built_model();
 }
 
 void check_ac() {
 	int N, k, odp;
 	double l = 0, m = 0;
-	inimg.open("../../../test/test-images.txt");
-	inlbl.open("../../../test/test-labels.txt");
+	inimg.open("test/test-images.txt");
+	inlbl.open("test/test-labels.txt");
 	inimg >> N >> N >> N;
 	inlbl >> N;
 
 	built_model();
 	get_weights();
 
-	//N = min(N, limit.second);
+	N = min(N, limit.second);
 	for (int i = 1; i <= N; i++) {
-		if (i % 1000 == 0) {
-			//cout << l << " " << m << "\n";
-			//cout << "Test " << i << "\n";
-		}
 		read_data();
 		go_forward();
 		inlbl >> k;
@@ -84,6 +80,11 @@ void check_ac() {
 		if (k == odp) {
 			l+=1;
 		}
+
+		if (i % 1000 == 0) {
+			cout << l / m << "\n";
+			cout << "Test " << i << "\n";
+		}
 	}
 	inimg.close();
 	inlbl.close();
@@ -92,20 +93,21 @@ void check_ac() {
 
 void train() {
 	int N;
-	inimg.open("../../../train/train-images.txt");
-	inlbl.open("../../../train/train-labels.txt");
+	inimg.open("train/train-images.txt");
+	inlbl.open("train/train-labels.txt");
 	inimg >> N >> N >> N;
 	inlbl >> N;
+
 	built_model();
 	get_weights();
-	//N = min(N, limit.first);
+	N = min(N, limit.first);
 	for (int i = 1; i <= N; i++) {
 		read_data();
 		go_forward();
 		expect();
 		go_back();
 		if (i % 100 == 0) {
-			//cout << "Train " << i << "\n";
+			cout << "Train " << i << "\n";
 			write_weights();
 		}
 	}
@@ -210,7 +212,7 @@ void build_weights() {
 
 void get_weights() {
 	fstream wg;
-	wg.open("../../../weights/weights.txt", ios::in);
+	wg.open("weights/weights.txt", ios::in);
 	for (int i = 0; i < weig; i++) {
 		wg >> wagi[i].first;
 		wagi[i].second = 0;
@@ -220,7 +222,7 @@ void get_weights() {
 
 void write_weights() {
 	fstream wg;
-	wg.open("../../../weights/weights.txt", ios::out);
+	wg.open("weights/weights.txt", ios::out);
 	for (int i = 0; i < weig; i++) {
 		wagi[i].first = wagi[i].first - wagi[i].second * rate;
 		wagi[i].second = 0;
