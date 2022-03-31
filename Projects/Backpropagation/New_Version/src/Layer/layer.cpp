@@ -19,5 +19,4 @@ Node& Layer::operator[](const size_t& iter) {
     return nodes[iter];
 }
 
-#endif
-
+#endif /* LAYER_CPP */

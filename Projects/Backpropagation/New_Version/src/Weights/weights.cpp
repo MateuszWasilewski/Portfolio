@@ -1,7 +1,6 @@
 #ifndef WEIGHTS_CPP
 #define WEIGHTS_CPP
 
-
 #include "../headers.h"
 
 Weights::Weights(const size_t& prev_size, const size_t& next_size) 
@@ -13,7 +12,6 @@ Weights::Weights(const size_t& prev_size, const size_t& next_size)
         values.push_back(0);
     }
 }
-
 
 DATATYPE& Weights::Value(const size_t& prev, const size_t& next) {
     return values[next_size * prev + next];
@@ -43,5 +41,4 @@ void Weights::AdjustWeights() {
     }
 }
 
-
-#endif
+#endif /* WEIGHTS_CPP */

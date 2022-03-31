@@ -41,7 +41,6 @@ public:
     // Contructor to use while connecting to files, 
     Files(const std::string& images_path, const std::string& labels_path);
 
-
     // Default destructor which closes previosly opened files.
     ~Files();
 
@@ -52,6 +51,4 @@ public:
     size_t GetCorrectAnswer();
 };
 
-
-
-#endif
+#endif /* FILE_H */

@@ -3,8 +3,6 @@
 
 #include "model.h"
 
-
-
 Model::Model(const std::vector <size_t> &layers_sizes) {
     if (layers_sizes.size() < 1) {
         std::cout << "Invalid Model\n";
@@ -155,4 +153,4 @@ void Model::CheckAccuracy() {
     std::cout << "Accuracy achievied: " << (DATATYPE) good_guess_counter / (DATATYPE) test_data.number_of_tests << std::endl;
 }
 
-#endif
+#endif /* MODEL_CPP */

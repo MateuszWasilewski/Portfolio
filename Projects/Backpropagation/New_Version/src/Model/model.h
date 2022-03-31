@@ -46,7 +46,4 @@ public:
     void CheckAccuracy();
 };
 
-
-
-
-#endif
+#endif /* MODEL_H */

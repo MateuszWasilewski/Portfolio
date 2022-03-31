@@ -35,5 +35,4 @@ public:
     void AdjustWeights();
 };
 
-
-#endif
+#endif /* WEIGHTS_H */

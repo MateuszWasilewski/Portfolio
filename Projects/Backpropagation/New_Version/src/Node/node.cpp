@@ -12,4 +12,4 @@ void Node::Activation() {
     value = 1 / (1 + exp(-value));
 }
 
-#endif
+#endif /* NODE_CPP */

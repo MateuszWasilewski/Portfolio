@@ -21,4 +21,4 @@ public:
     void Activation();
 };
 
-#endif
+#endif /* NODE_H */

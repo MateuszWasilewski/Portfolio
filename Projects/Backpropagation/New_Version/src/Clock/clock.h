@@ -30,5 +30,4 @@ public:
     }
 };
 
-
-#endif
+#endif /* CLOCK_H */

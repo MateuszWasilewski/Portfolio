@@ -5,7 +5,6 @@
 
 // Function reading given number of bytes from given stream, works up to 4 bytes.
 static size_t ReadBytes(std::fstream& file, size_t size) {
-    //LOG("maybe");
     size_t result = 0;
     while (size--) {
 		unsigned char x;
@@ -13,7 +12,6 @@ static size_t ReadBytes(std::fstream& file, size_t size) {
 		result <<= 8;
 		result += (int) x;
 	}
-    //LOG(result);
 	return result;
 }
 
@@ -27,7 +25,6 @@ DATATYPE ReadFromFile(std::fstream& file) {
 // Write DATATYPE number in binary to given open file.
 void WriteToFile(std::fstream& file, const DATATYPE& number) {
     file.write(reinterpret_cast<const char*> (&number), sizeof(DATATYPE));
-    LOG_WRITE(number); 
 }
 
 // Returns random value that can be used as base weight.
@@ -46,7 +43,6 @@ static DATATYPE RandomWeight(void) {
 DATATYPE GetValue(std::fstream& file) {
     DATATYPE result = file.good() ? ReadFromFile(file) : RandomWeight();
 
-    LOG_READ(result);
     return result;
 }
 
@@ -85,7 +81,6 @@ void Files::ReadBeginningLabels() {
 void Files::WriteInputsToLayer(Layer& layer) {
     size_t value;
     for (size_t iter = 0; iter < size_of_test; iter++) {
-        //LOG(iter);
         value = ReadBytes(images, 1);
         if (iter < layer.size()) {
             layer[iter].value = value;
@@ -98,4 +93,4 @@ size_t Files::GetCorrectAnswer() {
     return ReadBytes(labels, 1);
 }
 
-#endif
+#endif /* FILE_CPP */

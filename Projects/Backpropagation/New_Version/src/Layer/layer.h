@@ -23,4 +23,4 @@ public:
     Node& operator[](const size_t& iter);
 };
 
-#endif
+#endif /* LAYER_H */
