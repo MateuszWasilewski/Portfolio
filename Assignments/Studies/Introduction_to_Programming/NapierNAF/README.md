@@ -1,4 +1,4 @@
-Program does some basic arthimetic binary operation in binary non-adjescent form.
+Program does some basic arthimetic binary operation in binary non-adjacent form.
 
 In this folder files 
 napiernaf.h
