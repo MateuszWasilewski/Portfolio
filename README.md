@@ -33,10 +33,12 @@ Every source code in this repository is written by me unless staten otherwise.
 Technologies used
 - C++
 - C
+- Java
 - Shell scripting
 
 ## Most interesting folders
 In my opinion the most interesting folders are:
 - Projects/Backpropagation/New_Version
 - Projects/Baza_Danych_Studentow
+- Projects/C++_vs_Java
 - Assignments/Studies/Introduction_to_Programming, in particular Folder "Reachable"
